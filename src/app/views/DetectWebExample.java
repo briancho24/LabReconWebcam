@@ -1,6 +1,5 @@
 package app.views;
 
-
 import com.github.sarxos.webcam.Webcam;
 
 public class DetectWebExample {
