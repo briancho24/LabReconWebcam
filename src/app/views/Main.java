@@ -1,38 +1,52 @@
 package app.views;
 
-import com.github.sarxos.webcam.WebcamPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame{
 
+    public static Main frame;
     public static SettingsPanel settingsPanel;
     public static VideoPanel videoPanel;
-    public static WebcamPanel webcamPanel;
 
-    public static int defWidth = 1000;
-    public static int defHeight = 1000;
+    public static int defWidth = 640;
+    public static int defHeight = 480;
 
     public Main(){
         setTitle("Lab Recon Webcam");
-        setSize(1200, 500);
-        setLayout(new BorderLayout());
+        setSize(1200, 800);
+
+        setLayout(new FlowLayout());
 
         videoPanel = new VideoPanel();
-        webcamPanel = videoPanel.getPanel();
         settingsPanel = new SettingsPanel();
 
+        settingsPanel.setVisible(false);
         settingsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        webcamPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        videoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        add(settingsPanel, BorderLayout.NORTH);
-        add(webcamPanel, BorderLayout.CENTER);
+        add(settingsPanel);
+        add(videoPanel);
+    }
+
+    public static void viewSettings(boolean settings){
+        if(settings){
+            settingsPanel.setVisible(true);
+            videoPanel.setVisible(false);
+            videoPanel.panel.stop();
+        }
+        else{
+            videoPanel.setSize(new Dimension(640,480));
+            videoPanel.panel.setSize(new Dimension(640,480));
+            videoPanel.panel.start();
+            settingsPanel.setVisible(false);
+            videoPanel.setVisible(true);
+        }
     }
 
     public static void main(String[] args) {
-        Main frame = new Main();
-
+        frame = new Main();
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
