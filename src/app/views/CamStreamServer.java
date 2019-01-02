@@ -50,19 +50,19 @@ public class CamStreamServer {
 
 //		streamer.setReso(new Dimension(800, 600));
 
-		while (true) {
-			if (runServer) {
-				if (!w.isOpen()) {
-					streamer.start();
-				}
-				Thread.sleep(5000);
-			} else {
-				if (w.isOpen()) {
-					streamer.stop();
-					Thread.sleep(5000);
-				}
-			}
-		}
+//		while (true) {
+//			if (runServer) {
+//				if (!w.isOpen()) {
+//					streamer.start();
+//				}
+//				Thread.sleep(5000);
+//			} else {
+//				if (w.isOpen()) {
+//					streamer.stop();
+//					Thread.sleep(5000);
+//				}
+//			}
+//		}
 
 	}
 }

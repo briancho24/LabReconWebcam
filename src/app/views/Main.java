@@ -1,8 +1,14 @@
 package app.views;
 
 
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamStreamer;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+
+import static app.views.CamStreamServer.streamer;
 
 public class Main extends JFrame {
 
@@ -15,14 +21,14 @@ public class Main extends JFrame {
 
 	public Main() {
 		setTitle("Lab Recon Webcam");
-		setSize(1200, 800);
+		setSize(800, 800);
 
-		setLayout(new FlowLayout());
+		setLayout(new GridLayout(2, 2));
 
 		videoPanel = new VideoPanel();
 		settingsPanel = new SettingsPanel();
 
-		settingsPanel.setVisible(false);
+		settingsPanel.setVisible(true);
 		settingsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		videoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
@@ -30,25 +36,38 @@ public class Main extends JFrame {
 		add(videoPanel);
 	}
 
-	public static void viewSettings(boolean settings) {
-		if (settings) {
-			settingsPanel.setVisible(true);
-			videoPanel.setVisible(false);
-			videoPanel.panel.stop();
-		} else {
-			videoPanel.setSize(new Dimension(640, 480));
-			videoPanel.panel.setSize(new Dimension(640, 480));
-			videoPanel.panel.start();
-			settingsPanel.setVisible(false);
-			videoPanel.setVisible(true);
-		}
-	}
 
-	public static void main(String[] args) {
+	public static LabReconStreamer streamer;
+	public static Webcam webcam;
+	public static boolean runServer = true;
+
+	public static void main(String[] args) throws  InterruptedException {
+
+		webcam = Webcam.getDefault();
 		frame = new Main();
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setResizable(true);
+
+		streamer = new LabReconStreamer(4400, webcam, 60, true);
+
+		while (true) {
+			if (runServer) {
+				if (!webcam.isOpen()) {
+					videoPanel.getPanel().start();
+					streamer.start();
+				}
+				Thread.sleep(5000);
+			} else {
+				if (webcam.isOpen()) {
+					streamer.stop();
+					videoPanel.getPanel().stop();
+					Thread.sleep(5000);
+				}
+			}
+		}
+
+
 	}
 }
