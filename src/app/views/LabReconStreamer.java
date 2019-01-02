@@ -1,5 +1,6 @@
 package app.views;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ import java.net.SocketException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.imageio.ImageIO;
@@ -25,6 +27,7 @@ import org.slf4j.LoggerFactory;
 	Webcam streamer based on sarxos WebCam Streamer
 	Adds resolution
  */
+
 public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	private static final Logger LOG = LoggerFactory.getLogger(WebcamStreamer.class);
@@ -33,16 +36,22 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	private static final String CRLF = "\r\n";
 
+
 	private class Acceptor implements Runnable {
 
 		@Override
 		public void run() {
 			try {
 				ServerSocket server = new ServerSocket(port);
-				while (started.get()) {
-					Socket socket = server.accept();
-					LOG.info("New connection from {}", socket.getRemoteSocketAddress());
-					executor.execute(new Connection(socket));
+				server.setReuseAddress(true);
+				while (true) {
+					if (started.get()) {
+						Socket socket = server.accept();
+						LOG.info("New connection from {}", socket.getRemoteSocketAddress());
+						executor.execute(new Connection(socket));
+					} else {
+
+					}
 				}
 			} catch (Exception e) {
 				LOG.error("Cannot accept socket connection", e);
@@ -55,6 +64,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 		private Socket socket = null;
 
 		public Connection(Socket socket) {
+			System.out.println("Socket opened " + socket.getInetAddress());
 			this.socket = socket;
 		}
 
@@ -70,10 +80,12 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				bos = new BufferedOutputStream(socket.getOutputStream());
 			} catch (IOException e) {
 				LOG.error("Fatal I/O exception when creating socket streams", e);
+				System.out.println(e);
 				try {
 					socket.close();
 				} catch (IOException e1) {
-					LOG.error("Canot close socket connection from " + socket.getRemoteSocketAddress(), e1);
+					LOG.error("Cannot close socket connection from " + socket.getRemoteSocketAddress(), e1);
+					System.out.println(e1);
 				}
 				return;
 			}
@@ -94,7 +106,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 			try {
 
 				socket.setSoTimeout(0);
-				socket.setKeepAlive(false);
+				socket.setKeepAlive(true);
 				socket.setTcpNoDelay(true);
 
 				while (started.get()) {
@@ -113,9 +125,9 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 					do {
 
 						if (!webcam.isOpen() || socket.isInputShutdown() || socket.isClosed()) {
-							br.close();
-							bos.close();
-							return;
+//							br.close();
+//							bos.close();
+//							return;
 						}
 
 						baos.reset();
@@ -123,6 +135,8 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 						long now = System.currentTimeMillis();
 						if (now > last + delay) {
 							image = webcam.getImage();
+//							image = image.getSubimage(0, 0, 100, 100);
+
 							//TODO: change settings from GUI in here
 						}
 
@@ -152,6 +166,8 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				}
 			} catch (Exception e) {
 
+				System.out.println("reeeeeeeeewef");
+
 				String message = e.getMessage();
 
 				if (message != null) {
@@ -166,25 +182,30 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				}
 
 				LOG.error("Error", e);
+				System.out.println("Error: " + e);
 
 				try {
 					bos.write("HTTP/1.0 501 Internal Server Error\r\n\r\n\r\n".getBytes());
 				} catch (IOException e1) {
-					LOG.error("Not ablte to write to output stream", e);
+					LOG.error("Not able to write to output stream", e);
+					System.out.println(e);
 				}
 
 			} finally {
-				for (Closeable closeable : new Closeable[] { br, bos, baos }) {
+				for (Closeable closeable : new Closeable[]{br, bos, baos}) {
 					try {
 						closeable.close();
 					} catch (IOException e) {
 						LOG.error("Cannot close socket", e);
+						System.out.println(e);
 					}
 				}
 				try {
 					socket.close();
+					System.out.println(socket.getRemoteSocketAddress() + " closed");
 				} catch (IOException e) {
 					LOG.error("Cannot close socket", e);
+					System.out.println(e);
 				}
 			}
 		}
@@ -202,6 +223,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	public LabReconStreamer(int port, Webcam webcam, double fps, boolean start) {
 
+
 		if (webcam == null) {
 			throw new IllegalArgumentException("Webcam for streaming cannot be null");
 		}
@@ -211,7 +233,11 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 		this.fps = fps;
 		this.delay = (long) (1000 / fps);
 
+
 		if (start) {
+			webcam.addWebcamListener(this);
+			webcam.open();
+			executor.execute(new Acceptor());
 			start();
 		}
 	}
@@ -219,6 +245,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 	@Override
 	public Thread newThread(Runnable r) {
 		Thread thread = new Thread(r, String.format("streamer-thread-%s", number++));
+		System.out.println("Thread #: " + number);
 		thread.setUncaughtExceptionHandler(WebcamExceptionHandler.getInstance());
 		thread.setDaemon(true);
 		return thread;
@@ -226,19 +253,21 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	public void start() {
 		if (started.compareAndSet(false, true)) {
+			executor = Executors.newCachedThreadPool(this);
 			webcam.addWebcamListener(this);
 			webcam.open();
-			executor.execute(new Acceptor());
+//			executor.execute(new Acceptor());
 		}
 	}
 
 	public void stop() {
 		if (started.compareAndSet(true, false)) {
-			executor.shutdown();
+//			executor.shutdown();
 			webcam.removeWebcamListener(this);
 			webcam.close();
 		}
 	}
+
 
 	@Override
 	public void webcamOpen(WebcamEvent we) {
@@ -256,6 +285,12 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	@Override
 	public void webcamImageObtained(WebcamEvent we) {
+	}
+
+	public void setReso(Dimension newD) {
+//		webcam.close();
+		webcam.setViewSize(newD);
+//		webcam.open();
 	}
 
 	public double getFPS() {

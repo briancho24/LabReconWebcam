@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class SettingsPanel extends JPanel {
 
@@ -13,6 +15,8 @@ public class SettingsPanel extends JPanel {
     public static VideoPanel videoPanel = Main.videoPanel;
 
     private JSlider resoSlider;
+
+    private boolean runServer;
 
     public SettingsPanel(){
 
@@ -34,6 +38,21 @@ public class SettingsPanel extends JPanel {
         switchSetting.setVisible(true);
         switchSetting.addChangeListener(new SettingChangeListener());
 
+        JToggleButton jtb = new JToggleButton("Run/Stop");
+        jtb.setSelected(true);
+        jtb.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent ev) {
+                if (ev.getStateChange() == ItemEvent.SELECTED) {
+                    runServer = true;
+                    System.out.println(runServer);
+                } else if (ev.getStateChange() == ItemEvent.DESELECTED) {
+                    runServer = false;
+                    System.out.println(runServer);
+                }
+            }
+        });
+
+        add(jtb);
         add(switchSetting, BorderLayout.NORTH);
         add(resoLabel);
         add(resoSlider);
