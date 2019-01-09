@@ -21,9 +21,8 @@ public class Main extends JFrame {
 
 	public Main() {
 		setTitle("Lab Recon Webcam");
-		setSize(800, 800);
 
-		setLayout(new GridLayout(2, 2));
+		setLayout(new GridLayout(1, 2));
 
 		videoPanel = new VideoPanel();
 		settingsPanel = new SettingsPanel();
@@ -32,8 +31,8 @@ public class Main extends JFrame {
 		settingsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		videoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-		add(settingsPanel);
 		add(videoPanel);
+		add(settingsPanel);
 	}
 
 
@@ -48,7 +47,8 @@ public class Main extends JFrame {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		frame.setResizable(true);
+		frame.setResizable(false);
+		frame.setSize(800, 480);
 
 		streamer = new LabReconStreamer(4400, webcam, 60, true);
 

@@ -12,14 +12,14 @@ import java.awt.event.ItemListener;
 
 public class VideoPanel extends JPanel {
 
-	public static Dimension newD = new Dimension(1000, 1000);
+	public static Dimension newD = new Dimension(640, 480);
 
 	public static WebcamPanel panel;
 	public static Webcam webcam;
 
 	public VideoPanel() {
 
-		setLayout(new GridLayout(2,2));
+		setLayout(new GridLayout(1,1));
 //		setSize(new Dimension(640, 480));
 
 		webcam = Main.webcam;
