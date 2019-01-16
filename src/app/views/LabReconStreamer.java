@@ -37,6 +37,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 	private static final String CRLF = "\r\n";
 
 
+
 	private class Acceptor implements Runnable {
 
 		@Override
@@ -47,6 +48,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				while (true) {
 					if (started.get()) {
 						Socket socket = server.accept();
+						System.out.println("Navigate to " + socket.getInetAddress() + ":" + port);
 						LOG.info("New connection from {}", socket.getRemoteSocketAddress());
 						executor.execute(new Connection(socket));
 					} else {
@@ -137,6 +139,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 							image = webcam.getImage();
 //							image = image.getSubimage(0, 0, 100, 100);
 
+
 							//TODO: change settings from GUI in here
 						}
 
@@ -210,6 +213,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 			}
 		}
 	}
+
 
 	private Webcam webcam = null;
 	private double fps = 0;
@@ -285,12 +289,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	@Override
 	public void webcamImageObtained(WebcamEvent we) {
-	}
-
-	public void setReso(Dimension newD) {
-//		webcam.close();
-		webcam.setViewSize(newD);
-//		webcam.open();
 	}
 
 	public double getFPS() {

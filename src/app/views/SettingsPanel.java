@@ -23,8 +23,10 @@ public class SettingsPanel extends JPanel {
 	private JLabel pad1;
 	private JLabel header;
 	private JLabel camera;
+	private JLabel portNumLabel;
 	private JButton btnUpdate;
 	private JToggleButton btnToggleServer;
+	private JTextField portNum;
 
 	private boolean runServer;
 
@@ -33,22 +35,26 @@ public class SettingsPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
 		resoLabel = new JLabel("Resolution: " + videoPanel.newD.width + "x" + videoPanel.newD.height);
-		resoLabel.setBorder(new EmptyBorder(30,0,10,0));
+		resoLabel.setBorder(new EmptyBorder(30, 0, 10, 0));
 		resoLabel.setFont(new Font("Sans-Serif", Font.PLAIN, 18));
 
 		header = new JLabel("Settings:");
 		header.setFont(new Font("Sans-Serif", Font.PLAIN, 22));
-		header.setBorder(new EmptyBorder(20,0,20,0));
+		header.setBorder(new EmptyBorder(20, 0, 20, 0));
 
 		camera = new JLabel("Camera:");
-		camera.setBorder(new EmptyBorder(0,0,10,0));
+		camera.setBorder(new EmptyBorder(0, 0, 10, 0));
 		camera.setFont(new Font("Sans-Serif", Font.PLAIN, 18));
+
+		portNumLabel = new JLabel("Port: " + Main.port);
+		portNumLabel.setBorder(new EmptyBorder(0, 0, 10, 0));
+		portNumLabel.setFont(new Font("Sans-Serif", Font.PLAIN, 18));
 
 		resoSlider = new JSlider(0, 100);
 		resoSlider.setValue(100);
 		resoSlider.setMinimum(1);
 		resoSlider.setMaximum(100);
-		resoSlider.setBorder(new EmptyBorder(0,120,0,20));
+		resoSlider.setBorder(new EmptyBorder(0, 120, 0, 20));
 		resoSlider.setPaintTicks(true);
 		resoSlider.setMajorTickSpacing(10);
 		resoSlider.setVisible(true);
@@ -68,14 +74,14 @@ public class SettingsPanel extends JPanel {
 
 		btnToggleServer = new JToggleButton("Run/Stop");
 		btnToggleServer.setSelected(true);
-        btnToggleServer.setFocusPainted(false);
+		btnToggleServer.setFocusPainted(false);
 		btnToggleServer.setBackground(Color.RED);
 		btnToggleServer.setUI(new MetalToggleButtonUI() {
-            @Override
-            protected Color getSelectColor() {
-                return Color.GREEN;
-            }
-        });
+			@Override
+			protected Color getSelectColor() {
+				return Color.GREEN;
+			}
+		});
 		btnToggleServer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
@@ -84,7 +90,7 @@ public class SettingsPanel extends JPanel {
 					System.out.println(runServer);
 				} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
 					Main.runServer = false;
-                    btnToggleServer.setBackground(Color.RED);
+					btnToggleServer.setBackground(Color.RED);
 					System.out.println(runServer);
 				}
 			}
@@ -102,8 +108,22 @@ public class SettingsPanel extends JPanel {
 		});
 
 		pad1 = new JLabel();
-		pad1.setBorder(new EmptyBorder(20,0,0,0));
+		pad1.setBorder(new EmptyBorder(20, 0, 0, 0));
 
+		portNum = new JTextField();
+		portNum.addActionListener(new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (!portNum.getText().isEmpty()) {
+					Main.port = Integer.parseInt(portNum.getText());
+					portNumLabel.setText("Port: " + Main.port);
+					Main.streamer.stop();
+					Main.streamer = new LabReconStreamer(Main.port, Main.webcam, 60, true);
+					videoPanel.getPanel().stop();
+					videoPanel.getPanel().start();
+				}
+			}
+		});
 		add(header);
 		add(camera);
 		add(btnToggleServer);
@@ -112,6 +132,8 @@ public class SettingsPanel extends JPanel {
 		add(resoSlider);
 		add(pad1);
 		add(btnUpdate);
+		add(portNumLabel);
+		add(portNum);
 	}
 
 

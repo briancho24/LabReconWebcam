@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-import static app.views.CamStreamServer.streamer;
 
 public class Main extends JFrame {
 
@@ -18,6 +17,7 @@ public class Main extends JFrame {
 
 	public static int defWidth = 640;
 	public static int defHeight = 480;
+	public static int port = 4400;
 
 	public Main() {
 		setTitle("Lab Recon Webcam");
@@ -40,7 +40,7 @@ public class Main extends JFrame {
 	public static Webcam webcam;
 	public static boolean runServer = true;
 
-	public static void main(String[] args) throws  InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 
 		webcam = Webcam.getDefault();
 		frame = new Main();
@@ -50,7 +50,9 @@ public class Main extends JFrame {
 		frame.setResizable(false);
 		frame.setSize(800, 480);
 
-		streamer = new LabReconStreamer(4400, webcam, 60, true);
+//		TODO: method to update server port and rerun
+
+		streamer = new LabReconStreamer(port, webcam, 60, true);
 
 		while (true) {
 			if (runServer) {
