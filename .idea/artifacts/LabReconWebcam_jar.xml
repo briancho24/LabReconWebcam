@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact name="LabReconWebcam:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LabReconWebcam_jar</output-path>
+    <root id="root">
+      <element id="archive" name="LabReconWebcam.jar">
+        <element id="module-output" name="LabReconWebcam" />
+      </element>
+      <element id="file-copy" path="$USER_HOME$/Library/ini4j-0.5.4.jar" />
+      <element id="library" level="project" name="bridj-0.6.2" />
+      <element id="file-copy" path="$USER_HOME$/Library/ini4j-0.5.4-jdk14.jar" />
+      <element id="library" level="project" name="webcam-capture-0.3" />
+      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/bridj-0.6.2.jar" />
+      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/slf4j-api-1.7.2.jar" />
+      <element id="library" level="project" name="slf4j-api-1.7.2" />
+      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/webcam-capture-0.3.10.jar" />
+      <element id="library" level="project" name="slf4j" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/settings.ini" />
+    </root>
+  </artifact>
+</component>

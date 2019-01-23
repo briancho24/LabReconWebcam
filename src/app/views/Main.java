@@ -7,10 +7,7 @@ import org.ini4j.Ini;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Map;
 
 
@@ -19,6 +16,9 @@ public class Main extends JFrame {
 	public static Main frame;
 	public static SettingsPanel settingsPanel;
 	public static VideoPanel videoPanel;
+	public static LabReconStreamer streamer;
+	public static Webcam webcam;
+	public static boolean runServer = true;
 
 	public static int defWidth = 640;
 	public static int defHeight = 480;
@@ -39,11 +39,6 @@ public class Main extends JFrame {
 		add(videoPanel);
 		add(settingsPanel);
 	}
-
-
-	public static LabReconStreamer streamer;
-	public static Webcam webcam;
-	public static boolean runServer = true;
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 

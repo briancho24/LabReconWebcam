@@ -1,43 +1,7 @@
 <component name="libraryTable">
   <library name="webcam-capture-0.3">
-    <CLASSES>
-      <root url="file://U:/webcam-capture-0.3.10-dist" />
-    </CLASSES>
-    <JAVADOC>
-      <root url="file://U:/webcam-capture-0.3.10-dist/docs/javadoc" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/site/apidocs" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/site/testapidocs" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="file://U:/webcam-capture-0.3.10-dist/examples" />
-      <root url="file://U:/webcam-capture-0.3.10-dist/src" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/integration/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/jcl-over-slf4j/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/jcl-over-slf4j/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/jul-to-slf4j/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/jul-to-slf4j/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/log4j-over-slf4j/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/log4j-over-slf4j/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/osgi-over-slf4j/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-android/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-android/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-api/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-api/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-ext/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-ext/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-jcl/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-jcl/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-jdk14/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-jdk14/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-log4j12/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-log4j12/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-migrator/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-migrator/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-nop/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-nop/src/test/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-simple/src/main/java" />
-      <root url="file://U:/slf4j-1.7.25/slf4j-1.7.25/slf4j-simple/src/test/java" />
-    </SOURCES>
-    <jarDirectory url="file://U:/webcam-capture-0.3.10-dist" recursive="false" />
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

@@ -144,7 +144,6 @@ public class SettingsPanel extends JPanel {
 		public void stateChanged(ChangeEvent e) {
 			JButton root = (JButton) e.getSource();
 			if (root.getModel().isPressed()) {
-//				Main.viewSettings(false);
 			}
 		}
 	}
