@@ -34,9 +34,9 @@ public class VideoPanel extends JPanel {
 		webcam.setViewSize(newD);
 
 		panel = new WebcamPanel(webcam);
-		panel.setFPSDisplayed(true);
-		panel.setDisplayDebugInfo(true);
-		panel.setImageSizeDisplayed(true);
+		panel.setFPSDisplayed(false);
+		panel.setDisplayDebugInfo(false);
+		panel.setImageSizeDisplayed(false);
 		panel.setMirrored(true);
 
 		add(panel);
