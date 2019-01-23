@@ -133,7 +133,7 @@ public class SettingsPanel extends JPanel {
 		add(pad1);
 		add(btnUpdate);
 		add(portNumLabel);
-		add(portNum);
+//		add(portNum);
 	}
 
 

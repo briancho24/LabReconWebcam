@@ -3,10 +3,15 @@ package app.views;
 
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamStreamer;
+import org.ini4j.Ini;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Map;
 
 
 public class Main extends JFrame {
@@ -40,7 +45,11 @@ public class Main extends JFrame {
 	public static Webcam webcam;
 	public static boolean runServer = true;
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		Ini ini = new Ini(new File("settings.ini"));
+		port = Integer.parseInt(ini.get("server","port"));
+		System.out.println(port);
 
 		webcam = Webcam.getDefault();
 		frame = new Main();
@@ -69,7 +78,5 @@ public class Main extends JFrame {
 				}
 			}
 		}
-
-
 	}
 }

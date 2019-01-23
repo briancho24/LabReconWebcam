@@ -38,5 +38,23 @@
     <orderEntry type="library" name="slf4j" level="project" />
     <orderEntry type="library" name="slf4j-api-1.7.2" level="project" />
     <orderEntry type="library" name="bridj-0.6.2" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Library/ini4j-0.5.4-jdk14.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Library/ini4j-0.5.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
