@@ -49,6 +49,7 @@ public class Main extends JFrame {
 
 		Ini ini = new Ini(new File("settings.ini"));
 		port = Integer.parseInt(ini.get("server","port"));
+		videoPanel.newD = new Dimension(Integer.parseInt(ini.get("server", "res_w")), Integer.parseInt(ini.get("server", "res_h")));
 		System.out.println(port);
 
 		webcam = Webcam.getDefault();
