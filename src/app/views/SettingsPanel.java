@@ -1,5 +1,7 @@
 package app.views;
 
+import com.github.sarxos.webcam.Webcam;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
@@ -10,141 +12,153 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.IOException;
 
 public class SettingsPanel extends JPanel {
 
-	public int defWidth = Main.defWidth;
-	public int defHeight = Main.defHeight;
+	private int defWidth = Main.defWidth;
+	private int defHeight = Main.defHeight;
 
-	public static VideoPanel videoPanel = Main.videoPanel;
+	private static VideoPanel videoPanel = Main.videoPanel;
+	private static boolean runServer;
 
 	private JSlider resoSlider;
-	private JLabel resoLabel;
-	private JLabel pad1;
-	private JLabel header;
-	private JLabel camera;
-	private JLabel portNumLabel;
+	private JLabel lblReso;
+	private JLabel lblPad1;
+	private JLabel lblCamera;
+	private JLabel lblPortNum;
 	private JButton btnUpdate;
 	private JToggleButton btnToggleServer;
 	private JTextField portNum;
-
-	private boolean runServer;
+	private JComboBox webcamNames;
 
 	public SettingsPanel() {
 
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		Font settingsFont = new Font("Apple Casual", Font.PLAIN, 14);
+		GridLayout layout = new GridLayout(6,1);
+		setLayout(new GridLayout(6, 1));
+		runServer = Main.runServer;
 
-		resoLabel = new JLabel("Resolution: " + videoPanel.newD.width + "x" + videoPanel.newD.height);
-		resoLabel.setBorder(new EmptyBorder(30,0,10,0));
-		resoLabel.setFont(new Font("Lucida Sans", Font.PLAIN, 18));
+		webcamNames = new JComboBox();
+		for (Webcam w : Main.webcamList)
+			webcamNames.addItem(w.getName());
+		webcamNames.setSelectedItem(Main.webcam.getName());
 
-		header = new JLabel("Settings:");
-		header.setFont(new Font("Lucida Sans", Font.PLAIN, 22));
-		header.setBorder(new EmptyBorder(20,0,20,0));
+		lblReso = new JLabel("Resolution: " + videoPanel.getDim().width + "x" + videoPanel.getDim().height);
+		lblReso.setFont(settingsFont);
 
-		camera = new JLabel("Camera:");
-		camera.setBorder(new EmptyBorder(0,0,10,0));
-		camera.setFont(new Font("Lucida Sans", Font.PLAIN, 18));
+		lblCamera = new JLabel("Camera: " + Main.webcam.getName());
+		lblCamera.setFont(settingsFont);
 
-		portNumLabel = new JLabel("Port: " + Main.port);
-		portNumLabel.setBorder(new EmptyBorder(0, 0, 10, 0));
-		portNumLabel.setFont(new Font("Sans-Serif", Font.PLAIN, 18));
+		lblPortNum = new JLabel("Port: " + Main.port);
+		lblPortNum.setFont(settingsFont);
 
 		resoSlider = new JSlider(0, 100);
 		resoSlider.setValue(100);
 		resoSlider.setMinimum(1);
 		resoSlider.setMaximum(100);
-		resoSlider.setBorder(new EmptyBorder(0,120,0,20));
 		resoSlider.setPaintTicks(true);
-		resoSlider.setMajorTickSpacing(10);
+		resoSlider.setMajorTickSpacing(5);
+		resoSlider.setSnapToTicks(true);
 		resoSlider.setVisible(true);
+
+
+		btnToggleServer = new JToggleButton("Run/Stop");
+		btnToggleServer.setSelected(true);
+		btnToggleServer.setSize(100,20);
+		btnToggleServer.setFocusPainted(false);
+		btnToggleServer.setBackground(Color.RED);
+		btnToggleServer.setUI(new MetalToggleButtonUI() {
+			@Override
+			protected Color getSelectColor() {
+				return Color.GREEN;
+			}
+		});
+
+
+		btnUpdate = new JButton("Set Resolution");
+		btnUpdate.setContentAreaFilled(false);
+
+		lblPad1 = new JLabel();
+
+		portNum = new JTextField();
+
+		addListeners();
+
+
+		EmptyBorder padding = new EmptyBorder(10,10,10,10);
+		lblCamera.setBorder(padding);
+		webcamNames.setBorder(padding);
+		btnToggleServer.setBorder(padding);
+		lblReso.setBorder(padding);
+		resoSlider.setBorder(padding);
+		lblPortNum.setBorder(padding);
+
+		add(lblCamera);
+		add(webcamNames);
+		add(btnToggleServer);
+		add(lblReso);
+		add(resoSlider);
+		add(lblPortNum);
+	}
+
+	private void addListeners() {
 		resoSlider.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				JSlider root = (JSlider) e.getSource();
 				if (root.getValueIsAdjusting()) {
 					double factor = root.getValue() / 100.0;
-					videoPanel.newD = new Dimension((int) (factor * defWidth), (int) (factor * defHeight));
-//				System.out.println("" + factor + " defWith " + defWidth);
-//				System.out.println("1" + videoPanel.newD);
-					resoLabel.setText("Resolution: " + videoPanel.newD.width + "x" + videoPanel.newD.height);
+					videoPanel.setDim(new Dimension((int) (factor * defWidth), (int) (factor * defHeight)));
+					lblReso.setText("Resolution: " + videoPanel.getDim().width + "x" + videoPanel.getDim().height);
+				} else {
+					videoPanel.getWebcamPanel().stop();
+					videoPanel.setResolution();
+					videoPanel.getWebcamPanel().start();
 				}
 			}
 		});
-
-		btnToggleServer = new JToggleButton("Run/Stop");
-		btnToggleServer.setSelected(true);
-        btnToggleServer.setFocusPainted(false);
-		btnToggleServer.setBackground(Color.RED);
-		btnToggleServer.setUI(new MetalToggleButtonUI() {
-            @Override
-            protected Color getSelectColor() {
-                return Color.GREEN;
-            }
-        });
 		btnToggleServer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					Main.runServer = true;
 					btnToggleServer.setBackground(Color.GREEN);
-					System.out.println(runServer);
 				} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
 					Main.runServer = false;
-                    btnToggleServer.setBackground(Color.RED);
-					System.out.println(runServer);
+					btnToggleServer.setBackground(Color.RED);
 				}
 			}
 		});
-
-		btnUpdate = new JButton("Set Dimension");
-		btnUpdate.setContentAreaFilled(false);
-		btnUpdate.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				videoPanel.getPanel().stop();
-				videoPanel.setReso();
-				videoPanel.getPanel().start();
-			}
-		});
-
-		pad1 = new JLabel();
-		pad1.setBorder(new EmptyBorder(30,0,0,0));
-
-		portNum = new JTextField();
 		portNum.addActionListener(new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (!portNum.getText().isEmpty()) {
 					Main.port = Integer.parseInt(portNum.getText());
-					portNumLabel.setText("Port: " + Main.port);
+					lblPortNum.setText("Port: " + Main.port);
 					Main.streamer.stop();
 					Main.streamer = new LabReconStreamer(Main.port, Main.webcam, 60, true);
-					videoPanel.getPanel().stop();
-					videoPanel.getPanel().start();
+					videoPanel.getWebcamPanel().stop();
+					videoPanel.getWebcamPanel().start();
 				}
 			}
 		});
-		add(header);
-		add(pad1);
-		add(camera);
-		add(btnToggleServer);
-		add(pad1);
-		add(resoLabel);
-		add(resoSlider);
-		add(pad1);
-		add(btnUpdate);
-		add(portNumLabel);
-//		add(portNum);
-	}
 
+		webcamNames.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
 
-	public class SettingChangeListener implements ChangeListener {
-
-		@Override
-		public void stateChanged(ChangeEvent e) {
-			JButton root = (JButton) e.getSource();
-			if (root.getModel().isPressed()) {
+				JComboBox cb = (JComboBox)e.getSource();
+				String cam = (String)cb.getSelectedItem();
+				Main.ini.put("streamer", "camera", cam);
+				try {
+					Main.ini.store();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				System.out.println(cam);
 			}
-		}
+		});
 	}
+
+
 }

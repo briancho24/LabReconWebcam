@@ -1,20 +1,20 @@
 <component name="ArtifactManager">
-  <artifact name="LabReconWebcam:jar">
+  <artifact type="jar" name="LabReconWebcam:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/LabReconWebcam_jar</output-path>
-    <root id="root">
-      <element id="archive" name="LabReconWebcam.jar">
-        <element id="module-output" name="LabReconWebcam" />
+    <root id="archive" name="LabReconWebcam.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
       </element>
-      <element id="file-copy" path="$USER_HOME$/Library/ini4j-0.5.4.jar" />
-      <element id="library" level="project" name="bridj-0.6.2" />
-      <element id="file-copy" path="$USER_HOME$/Library/ini4j-0.5.4-jdk14.jar" />
+      <element id="module-output" name="LabReconWebcam" />
+      <element id="extracted-dir" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/webcam-capture-0.3.10.jar" path-in-jar="/" />
       <element id="library" level="project" name="webcam-capture-0.3" />
-      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/bridj-0.6.2.jar" />
-      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/slf4j-api-1.7.2.jar" />
       <element id="library" level="project" name="slf4j-api-1.7.2" />
-      <element id="file-copy" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/webcam-capture-0.3.10.jar" />
       <element id="library" level="project" name="slf4j" />
-      <element id="file-copy" path="$PROJECT_DIR$/resources/settings.ini" />
+      <element id="library" level="project" name="bridj-0.6.2" />
+      <element id="extracted-dir" path="$USER_HOME$/Library/ini4j-0.5.4-jdk14.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/bridj-0.6.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Library/ini4j-0.5.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Library/webcam-capture-0.3.10-dist/libs/slf4j-api-1.7.2.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

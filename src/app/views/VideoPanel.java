@@ -4,34 +4,24 @@ import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class VideoPanel extends JPanel {
 
-	public static Dimension newD = new Dimension(640, 480);
-
+	public static Dimension dim;
 	public static WebcamPanel panel;
 	public static Webcam webcam;
 
-	public VideoPanel() {
+	public VideoPanel(Webcam webcam) {
 
-		setLayout(new GridLayout(1,1));
-//		setSize(new Dimension(640, 480));
+		setLayout(new GridLayout(1, 1));
 
-		webcam = Main.webcam;
+		dim = new Dimension(640, 480);
+		Dimension[] dimensions = {dim};
 
-		Dimension[] dimensions = {newD};
-		webcam.setCustomViewSizes(dimensions);
-
-		//max 640, 480
-
-		//webcam.setViewSize(WebcamResolution.VGA.getSize());
-
-		webcam.setViewSize(newD);
+		this.webcam = webcam;
+		this.webcam.setCustomViewSizes(dimensions);
+		this.webcam.setViewSize(dim);
 
 		panel = new WebcamPanel(webcam);
 		panel.setFPSDisplayed(false);
@@ -40,20 +30,26 @@ public class VideoPanel extends JPanel {
 		panel.setMirrored(true);
 
 		add(panel);
-//		add(switchSetting);
-
 	}
 
-	public WebcamPanel getPanel() {
+	public WebcamPanel getWebcamPanel() {
 		return panel;
 	}
 
-	public void setReso() {
+	public void setDim(Dimension d) {
+		dim = d;
+	}
+
+	public Dimension getDim() {
+		return dim;
+	}
+
+	public void setResolution() {
 		if (Main.webcam.isOpen())
 			Main.webcam.close();
-		Dimension[] dimensions = {newD};
+		Dimension[] dimensions = {dim};
 		Main.webcam.setCustomViewSizes(dimensions);
-		Main.webcam.setViewSize(newD);
+		Main.webcam.setViewSize(dim);
 		Main.webcam.open();
 	}
 

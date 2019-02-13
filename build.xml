@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LabReconWebcam" default="default" basedir=".">
+
+    <!--<import file="nbproject/build-impl.xml"/>-->
+
+    <taskdef name="bundleapp"
+             classname="com.oracle.appbundler.AppBundlerTask"
+             classpath="lib/appbundler-1.0.jar" />
+    <target name="default"></target>
+    <target name="bundle-LabReconWebcam">
+        <bundleapp outputdirectory="dist"
+                   name="LabReconWebcam"
+                   displayname="LabRecon Webcam"
+                   identifier="components.LabReconWebcam"
+                   mainclassname="components.LabReconWebcam">
+            <classpath file="dist/LabReconWebcam.jar" />
+        </bundleapp>
+    </target>
+
+</project>
