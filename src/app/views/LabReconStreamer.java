@@ -48,15 +48,13 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				while (true) {
 					if (started.get()) {
 						Socket socket = server.accept();
-						System.out.println("Navigate to " + socket.getInetAddress() + ":" + port);
-						LOG.info("New connection from {}", socket.getRemoteSocketAddress());
+//						System.out.println("Navigate to " + socket.getInetAddress() + ":" + port);
+						System.out.println("New connection from " + socket.getRemoteSocketAddress());
 						executor.execute(new Connection(socket));
-					} else {
-
 					}
 				}
 			} catch (Exception e) {
-				LOG.error("Cannot accept socket connection", e);
+				System.out.println("Cannot accept socket connection: " + e.getMessage());
 			}
 		}
 	}
@@ -66,7 +64,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 		private Socket socket = null;
 
 		public Connection(Socket socket) {
-			System.out.println("Socket opened " + socket.getInetAddress());
 			this.socket = socket;
 		}
 
@@ -127,9 +124,9 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 					do {
 
 						if (!webcam.isOpen() || socket.isInputShutdown() || socket.isClosed()) {
-//							br.close();
-//							bos.close();
-//							return;
+							br.close();
+							bos.close();
+							return;
 						}
 
 						baos.reset();
@@ -169,7 +166,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				}
 			} catch (Exception e) {
 
-				System.out.println("reeeeeeeeewef");
 
 				String message = e.getMessage();
 
@@ -249,7 +245,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 	@Override
 	public Thread newThread(Runnable r) {
 		Thread thread = new Thread(r, String.format("streamer-thread-%s", number++));
-		System.out.println("Thread #: " + number);
 		thread.setUncaughtExceptionHandler(WebcamExceptionHandler.getInstance());
 		thread.setDaemon(true);
 		return thread;
