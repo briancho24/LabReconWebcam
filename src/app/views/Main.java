@@ -1,7 +1,7 @@
 package app.views;
 
 
-import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.*;
 import org.ini4j.Ini;
 
 import javax.swing.*;
