@@ -57,5 +57,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="ini4j-0.5.4-jdk14" level="project" />
+    <orderEntry type="library" name="webcam-capture-0.3.10" level="project" />
   </component>
 </module>
