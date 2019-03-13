@@ -7,6 +7,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.time.LocalDateTime;
 
 public class ConsolePanel extends JPanel {
 
@@ -14,17 +15,17 @@ public class ConsolePanel extends JPanel {
 	private JTextPane textPane;
 
 	public ConsolePanel() {
-		consolePane = new JScrollPane();
-		consolePane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
 
 		textPane = new JTextPane();
 		textPane.setEditable(false);
 		textPane.setFocusable(false);
-		textPane.setFont(new Font("Courier New", Font.PLAIN, 8));
+		textPane.setFont(new Font("Courier New", Font.PLAIN, 10));
 		setSize(400, 480);
 		setLayout(new GridLayout());
 
-		consolePane.add(textPane);
+		consolePane = new JScrollPane(textPane);
+		consolePane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
 		add(consolePane);
 		redirectSystemStreams();
@@ -45,6 +46,7 @@ public class ConsolePanel extends JPanel {
 	}
 
 	private void redirectSystemStreams() {
+		//"[" + LocalDateTime.now().toString() + "] " +
 		OutputStream out = new OutputStream() {
 			@Override
 			public void write(final int b) throws IOException {
