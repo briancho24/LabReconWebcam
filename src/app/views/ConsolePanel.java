@@ -10,16 +10,23 @@ import java.io.PrintStream;
 
 public class ConsolePanel extends JPanel {
 
+	private JScrollPane consolePane;
 	private JTextPane textPane;
 
 	public ConsolePanel() {
+		consolePane = new JScrollPane();
+		consolePane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
 		textPane = new JTextPane();
 		textPane.setEditable(false);
 		textPane.setFocusable(false);
+		textPane.setFont(new Font("Courier New", Font.PLAIN, 8));
 		setSize(400, 480);
 		setLayout(new GridLayout());
 
-		add(textPane);
+		consolePane.add(textPane);
+
+		add(consolePane);
 		redirectSystemStreams();
 	}
 

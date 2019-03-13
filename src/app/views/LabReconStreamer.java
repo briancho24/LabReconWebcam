@@ -119,6 +119,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 					sb.append("Content-type: multipart/x-mixed-replace; boundary=--").append(BOUNDARY).append(CRLF);
 					sb.append(CRLF);
 
+
 					bos.write(sb.toString().getBytes());
 
 					do {
@@ -133,11 +134,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 						long now = System.currentTimeMillis();
 						if (now > last + delay) {
-							image = webcam.getImage();
-//							image = image.getSubimage(0, 0, 100, 100);
-
-
-							//TODO: change settings from GUI in here
+							image = resize(webcam.getImage(), 480, 640);
 						}
 
 						ImageIO.write(image, "JPG", baos);
@@ -151,6 +148,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 						try {
 							bos.write(sb.toString().getBytes());
 							bos.write(baos.toByteArray());
+							bos.write(CRLF.getBytes());
 							bos.write(CRLF.getBytes());
 							bos.flush();
 						} catch (SocketException e) {
@@ -296,6 +294,15 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 	public int getPort() {
 		return port;
+	}
+
+	private static BufferedImage resize(BufferedImage img, int height, int width) {
+		Image tmp = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		BufferedImage resized = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+		Graphics2D g2d = resized.createGraphics();
+		g2d.drawImage(tmp, 0, 0, null);
+		g2d.dispose();
+		return resized;
 	}
 
 }
