@@ -37,7 +37,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 	private static final String CRLF = "\r\n";
 
 
-
 	private class Acceptor implements Runnable {
 
 		@Override
@@ -134,7 +133,7 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 
 						long now = System.currentTimeMillis();
 						if (now > last + delay) {
-							image = resize(webcam.getImage(), 480, 640);
+							image = resize(webcam.getImage(), img_h, img_w);
 						}
 
 						ImageIO.write(image, "JPG", baos);
@@ -218,6 +217,31 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 	private BufferedImage image = null;
 	private ExecutorService executor = Executors.newCachedThreadPool(this);
 	private AtomicBoolean started = new AtomicBoolean(false);
+	private int img_w = 640;
+	private int img_h = 480;
+
+	public LabReconStreamer(int port, Webcam webcam, double fps, boolean start, int w, int h) {
+
+
+		if (webcam == null) {
+			throw new IllegalArgumentException("Webcam for streaming cannot be null");
+		}
+
+		this.port = port;
+		this.webcam = webcam;
+		this.fps = fps;
+		this.delay = (long) (1000 / fps);
+		this.img_w = w;
+		this.img_h = h;
+
+
+		if (start) {
+			webcam.addWebcamListener(this);
+			webcam.open();
+			executor.execute(new Acceptor());
+			start();
+		}
+	}
 
 	public LabReconStreamer(int port, Webcam webcam, double fps, boolean start) {
 

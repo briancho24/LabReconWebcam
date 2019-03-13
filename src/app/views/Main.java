@@ -62,6 +62,10 @@ public class Main extends JFrame {
 		port = Integer.parseInt(ini.get("streamer", "port"));
 		int res_w = Integer.parseInt(ini.get("streamer", "res_w"));
 		int res_h = Integer.parseInt(ini.get("streamer", "res_h"));
+		int img_w = Integer.parseInt(ini.get("image", "img_w"));
+		int img_h = Integer.parseInt(ini.get("image", "img_h"));
+
+
 
 		webcam = Webcam.getDefault();
 
@@ -81,7 +85,7 @@ public class Main extends JFrame {
 		System.out.println(new Timestamp(System.currentTimeMillis()).toString() + " Streaming to port " + port);
 		System.out.println("Webcam Name: " + webcamName);
 		videoPanel.setDim(new Dimension(res_w, res_h));
-		streamer = new LabReconStreamer(port, webcam, 60, true);
+		streamer = new LabReconStreamer(port, webcam, 60, true, img_w, img_h);
 
 		do {
 			if (runServer) {
