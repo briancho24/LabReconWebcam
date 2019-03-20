@@ -44,7 +44,7 @@ public class SettingsPanel extends JPanel {
 			webcamNames.addItem(w.getName());
 		webcamNames.setSelectedItem(Main.webcam.getName());
 
-		lblReso = new JLabel("Dimensions: " + videoPanel.getDim().width + "x" + videoPanel.getDim().height);
+		lblReso = new JLabel("Resolution: " + videoPanel.getDim().width + "x" + videoPanel.getDim().height);
 		lblReso.setFont(settingsFont);
 
 		lblCamera = new JLabel("Camera: " + Main.webcam.getName());

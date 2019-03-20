@@ -17,6 +17,7 @@ public class Main extends JFrame {
 	static VideoPanel videoPanel;
 	static SettingsPanel settingsPanel;
 	static ConsolePanel consolePanel;
+	static HelpPanel helpPanel;
 	static LabReconStreamer streamer;
 	static List<Webcam> webcamList;
 	static JTabbedPane tp;
@@ -28,7 +29,7 @@ public class Main extends JFrame {
 
 	static Ini ini;
 
-	public Main() {
+	public Main() throws FileNotFoundException {
 		setTitle("Lab Recon Webcam");
 
 		setLayout(new GridLayout(1, 2));
@@ -36,16 +37,18 @@ public class Main extends JFrame {
 		videoPanel = new VideoPanel(webcam);
 		settingsPanel = new SettingsPanel();
 		consolePanel = new ConsolePanel();
+		helpPanel = new HelpPanel();
 		tp = new JTabbedPane();
 
 		settingsPanel.setVisible(true);
-		settingsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		videoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		consolePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//		settingsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//		videoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//		consolePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 		add(videoPanel);
 		tp.add("Settings", settingsPanel);
 		tp.add("Console", consolePanel);
+		tp.add("Help", helpPanel);
 		add(tp);
 
 		setLocationRelativeTo(null);
@@ -62,9 +65,9 @@ public class Main extends JFrame {
 		port = Integer.parseInt(ini.get("streamer", "port"));
 		int res_w = Integer.parseInt(ini.get("streamer", "res_w"));
 		int res_h = Integer.parseInt(ini.get("streamer", "res_h"));
+		int fps = Integer.parseInt(ini.get("streamer", "fps"));
 		int img_w = Integer.parseInt(ini.get("image", "img_w"));
 		int img_h = Integer.parseInt(ini.get("image", "img_h"));
-
 
 
 		webcam = Webcam.getDefault();
@@ -73,19 +76,16 @@ public class Main extends JFrame {
 		for (Webcam w : webcamList) {
 			if (w.getName().equals(webcamName))
 				webcam = w;
-//			System.out.println(w.getName());
 		}
 
 		ini.put("streamer", "camera", webcamName);
 		ini.store();
 
 		Main frame = new Main();
-
-
 		System.out.println(new Timestamp(System.currentTimeMillis()).toString() + " Streaming to port " + port);
 		System.out.println("Webcam Name: " + webcamName);
 		videoPanel.setDim(new Dimension(res_w, res_h));
-		streamer = new LabReconStreamer(port, webcam, 60, true, img_w, img_h);
+		streamer = new LabReconStreamer(port, webcam, fps, true, img_w, img_h);
 
 		do {
 			if (runServer) {
