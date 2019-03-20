@@ -15,7 +15,7 @@ public class HelpPanel extends JPanel {
 	JFrame tempFrame;
 	JTextArea fileText;
 	JScrollPane scrollPane;
-	JLabel info;
+	JTextArea info;
 
 	public HelpPanel() throws FileNotFoundException {
 
@@ -29,14 +29,34 @@ public class HelpPanel extends JPanel {
 		btnOpenFile = new JButton("View settings.ini");
 
 		c.fill = GridBagConstraints.HORIZONTAL;
+		c.anchor = GridBagConstraints.LINE_START;
+		c.gridwidth = 1;
 		c.weightx = 0.5;
-		c.weighty = 0;
+		c.weighty = 0.5;
 
 		fileText = new JTextArea();
 		scrollPane = new JScrollPane(fileText, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 		btnSave = new JButton("Save and Close");
-		info = new JLabel("<html>Note: Changes to the application settings will not take place until the app is restarted.</html>");
+
+		String infoText = "";
+		infoText += "[port]: Specifies port number where stream will be served\n";
+		infoText += "[res_h]: Number of vertical pixels in image\n";
+		infoText += "[res_w]: Number of horizontal pixels in image\n";
+		infoText += "[fps]: Number of frames per second for stream\n";
+		infoText += "[camera]: Name of webcam\n";
+		infoText += "[img_h]: Height of image in pixels as displayed on webpage\n";
+		infoText += "[img_w]: Width of image in pixels as displayed on webpage\n\n";
+
+		infoText += "Note: Changes to the application settings will not take place until the app is restarted.";
+
+		info = new JTextArea();
+		info.setText(infoText);
+		info.setEditable(false);
+		info.setWrapStyleWord(true);
+		info.setBorder(null);
+		info.setLineWrap(true);
+		info.setBackground(null);
 
 
 		tempFrame = new JFrame();
@@ -46,10 +66,12 @@ public class HelpPanel extends JPanel {
 		tempFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		tempFrame.setResizable(true);
 		tempFrame.setSize(400, 400);
+
 		c.gridheight = 4;
 		c.gridx = 0;
 		c.gridy = 0;
 		tempFrame.add(scrollPane, c);
+
 		c.gridheight = 1;
 		c.gridx = 0;
 		c.gridy = 6;
@@ -58,16 +80,15 @@ public class HelpPanel extends JPanel {
 
 		addListeners();
 
-		c.fill = GridBagConstraints.HORIZONTAL;
 
-		c.gridheight = 1;
+		c.gridheight = 6;
 		c.gridx = 0;
-		c.gridy = 1;
+		c.gridy = 0;
 		c.ipady = 10;
 		add(info, c);
 
-		c.gridx = 0;
-		c.gridy = 3;
+		c.gridheight = 1;
+		c.gridy = 7;
 		add(btnOpenFile, c);
 	}
 
@@ -87,7 +108,6 @@ public class HelpPanel extends JPanel {
 				Scanner scan = new Scanner(file);
 				while (scan.hasNextLine())
 					s += scan.nextLine() + "\n";
-				System.out.println(s);
 				scan.close();
 				fileText.setText(s);
 				tempFrame.setVisible(true);

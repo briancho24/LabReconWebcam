@@ -7,19 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="260acb2f-ad8e-4f17-bfeb-a23440c1a388" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/views/HelpPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/ConsolePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/ConsolePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/ConsolePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/ConsolePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Acceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Acceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Connection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/resources/settings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/SettingsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/SettingsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/HelpPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,17 +112,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ini" value="186" />
-          <entry key="java" value="6141" />
-          <entry key="txt" value="116" />
+          <entry key="ini" value="188" />
+          <entry key="java" value="6893" />
+          <entry key="txt" value="131" />
           <entry key="xml" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Ini" value="178" />
-          <entry key="JAVA" value="6141" />
-          <entry key="PLAIN_TEXT" value="124" />
+          <entry key="Ini" value="180" />
+          <entry key="JAVA" value="6893" />
+          <entry key="PLAIN_TEXT" value="139" />
           <entry key="XML" value="18" />
         </counts>
       </usages-collector>
@@ -143,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+            <state relative-caret-position="137">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/settings.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state>
+              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -176,7 +166,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/VideoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-182">
               <caret line="8" column="38" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -192,9 +182,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/SettingsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-298">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="30">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2100#2211#0" expanded="true" />
                 <element signature="e#2210#2211#0" expanded="true" />
               </folding>
@@ -205,8 +196,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+            <state relative-caret-position="334">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -263,8 +254,8 @@
         <option value="$PROJECT_DIR$/src/app/views/ConsolePanel.java" />
         <option value="$PROJECT_DIR$/src/app/views/LabReconStreamer.java" />
         <option value="$PROJECT_DIR$/src/app/views/SettingsPanel.java" />
-        <option value="$PROJECT_DIR$/resources/settings.ini" />
         <option value="$PROJECT_DIR$/src/app/views/Main.java" />
+        <option value="$PROJECT_DIR$/resources/settings.ini" />
         <option value="$PROJECT_DIR$/src/app/views/HelpPanel.java" />
       </list>
     </option>
@@ -361,7 +352,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="labreconwebcam" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553105961319" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553108548760" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -508,7 +499,7 @@
       <workItem from="1551964364604" duration="279000" />
       <workItem from="1552483859410" duration="4174000" />
       <workItem from="1552488193217" duration="4762000" />
-      <workItem from="1553093560146" duration="8146000" />
+      <workItem from="1553093560146" duration="10778000" />
     </task>
     <task id="LOCAL-00001" summary="fixed directories">
       <created>1543419957872</created>
@@ -608,11 +599,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552500204261</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ini file editor">
+      <created>1553106048695</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1553106048695</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109859000" />
+    <option name="totallyTimeSpent" value="112491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
@@ -698,7 +696,8 @@
     <MESSAGE value="update 3/13" />
     <MESSAGE value="dzsfghj" />
     <MESSAGE value="resize in ini" />
-    <option name="LAST_COMMIT_MESSAGE" value="resize in ini" />
+    <MESSAGE value="ini file editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="ini file editor" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -789,23 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/LabReconStreamer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/settings.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/ConsolePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -816,10 +798,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
+    <entry file="file://$PROJECT_DIR$/resources/settings.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/LabReconStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -828,7 +817,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/VideoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="-182">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -842,19 +831,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/SettingsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-298">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#2100#2211#0" expanded="true" />
             <element signature="e#2210#2211#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+        <state relative-caret-position="334">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
