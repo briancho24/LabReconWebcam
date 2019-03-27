@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260acb2f-ad8e-4f17-bfeb-a23440c1a388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/resources/settings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/HelpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/HelpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +63,7 @@
     <session id="665249214">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
@@ -196,8 +195,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="368">
+              <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-end-line="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -352,7 +351,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="labreconwebcam" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553108548760" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553170576613" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -499,7 +498,7 @@
       <workItem from="1551964364604" duration="279000" />
       <workItem from="1552483859410" duration="4174000" />
       <workItem from="1552488193217" duration="4762000" />
-      <workItem from="1553093560146" duration="10778000" />
+      <workItem from="1553093560146" duration="11331000" />
     </task>
     <task id="LOCAL-00001" summary="fixed directories">
       <created>1543419957872</created>
@@ -606,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553106048695</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ini file editor">
+      <created>1553108598736</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1553108598736</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112491000" />
+    <option name="totallyTimeSpent" value="113044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
@@ -625,7 +631,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.23795621" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.23795621" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -853,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="368">
+          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-end-line="120" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
