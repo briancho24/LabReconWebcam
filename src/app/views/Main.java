@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.sql.Timestamp;
+import java.util.*;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ public class Main extends JFrame {
 	static ConsolePanel consolePanel;
 	static HelpPanel helpPanel;
 	static LabReconStreamer streamer;
-	static List<Webcam> webcamList;
+	static Map<String, Webcam> webcamList = new HashMap<String, Webcam>();
 	static JTabbedPane tp;
 
 	static boolean runServer = true;
@@ -34,7 +35,7 @@ public class Main extends JFrame {
 
 		setLayout(new GridLayout(1, 2));
 
-		videoPanel = new VideoPanel(webcam);
+		videoPanel = new VideoPanel();
 		settingsPanel = new SettingsPanel();
 		consolePanel = new ConsolePanel();
 		helpPanel = new HelpPanel();
@@ -70,13 +71,12 @@ public class Main extends JFrame {
 		int img_h = Integer.parseInt(ini.get("image", "img_h"));
 
 
-		webcam = Webcam.getDefault();
+		List<Webcam> webcams = Webcam.getWebcams();
 
-		webcamList = Webcam.getWebcams();
-		for (Webcam w : webcamList) {
-			if (w.getName().equals(webcamName))
-				webcam = w;
-		}
+		for (Webcam w : webcams)
+			webcamList.put(w.getName(), w);
+
+		webcam = webcamList.getOrDefault(webcamName, Webcam.getDefault());
 
 		ini.put("streamer", "camera", webcamName);
 		ini.store();

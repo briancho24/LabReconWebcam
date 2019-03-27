@@ -163,7 +163,6 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 				}
 			} catch (Exception e) {
 
-
 				String message = e.getMessage();
 
 				if (message != null) {
@@ -262,6 +261,14 @@ public class LabReconStreamer implements ThreadFactory, WebcamListener {
 			executor.execute(new Acceptor());
 			start();
 		}
+	}
+
+	public void setWebcam(Webcam webcam) {
+		this.webcam.removeWebcamListener(this);
+		this.webcam.close();
+		this.webcam = webcam;
+		this.webcam.addWebcamListener(this);
+		this.webcam.open();
 	}
 
 	@Override

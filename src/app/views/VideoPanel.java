@@ -10,20 +10,19 @@ public class VideoPanel extends JPanel {
 
 	public static Dimension dim;
 	public static WebcamPanel panel;
-	public static Webcam webcam;
 
-	public VideoPanel(Webcam webcam) {
+	public VideoPanel() {
 
 		setLayout(new GridLayout(1, 1));
 
 		dim = new Dimension(640, 480);
 		Dimension[] dimensions = {dim};
 
-		this.webcam = webcam;
-		this.webcam.setCustomViewSizes(dimensions);
-		this.webcam.setViewSize(dim);
+//		this.webcam = webcam;
+//		this.webcam.setCustomViewSizes(dimensions);
+//		this.webcam.setViewSize(dim);
 
-		panel = new WebcamPanel(webcam);
+		panel = new WebcamPanel(Main.webcam);
 		panel.setFPSDisplayed(false);
 		panel.setDisplayDebugInfo(false);
 		panel.setImageSizeDisplayed(false);
@@ -51,6 +50,15 @@ public class VideoPanel extends JPanel {
 		Main.webcam.setCustomViewSizes(dimensions);
 		Main.webcam.setViewSize(dim);
 		Main.webcam.open();
+	}
+
+	public void updateWebcamFeed() {
+		Main.webcam.close();
+		this.remove(panel);
+		panel = new WebcamPanel(Main.webcam);
+		this.add(panel);
+		Main.webcam.open();
+		panel.revalidate();
 	}
 
 }

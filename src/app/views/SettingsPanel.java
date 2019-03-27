@@ -40,8 +40,8 @@ public class SettingsPanel extends JPanel {
 		runServer = Main.runServer;
 
 		webcamNames = new JComboBox();
-		for (Webcam w : Main.webcamList)
-			webcamNames.addItem(w.getName());
+		for (String w : Main.webcamList.keySet())
+			webcamNames.addItem(w);
 		webcamNames.setSelectedItem(Main.webcam.getName());
 
 		lblReso = new JLabel("Resolution: " + videoPanel.getDim().width + "x" + videoPanel.getDim().height);
@@ -152,6 +152,10 @@ public class SettingsPanel extends JPanel {
 				Main.ini.put("streamer", "camera", cam);
 				try {
 					Main.ini.store();
+					Main.webcam = Main.webcamList.get(cam);
+					Main.streamer.setWebcam(Main.webcam);
+					Main.videoPanel.updateWebcamFeed();
+					lblCamera.setText("Camera: " + Main.webcam.getName());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
