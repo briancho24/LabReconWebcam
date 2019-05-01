@@ -8,7 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="260acb2f-ad8e-4f17-bfeb-a23440c1a388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer$Connection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/LabReconStreamer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/SettingsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/VideoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/app/views/VideoPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LabReconWebcam/settings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/resources/settings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/SettingsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/SettingsPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,22 +76,23 @@
     <session id="665249214">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.3" value="5" />
+          <entry key="project.open.time.3" value="7" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -87,7 +101,7 @@
           <entry key="class" value="2" />
           <entry key="gitattributes" value="1" />
           <entry key="iml" value="2" />
-          <entry key="ini" value="7" />
+          <entry key="ini" value="8" />
           <entry key="java" value="17" />
           <entry key="plist" value="1" />
           <entry key="properties" value="3" />
@@ -100,7 +114,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="Ini" value="6" />
+          <entry key="Ini" value="7" />
           <entry key="JAVA" value="17" />
           <entry key="Manifest" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
@@ -112,16 +126,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ini" value="188" />
-          <entry key="java" value="6893" />
-          <entry key="txt" value="131" />
+          <entry key="java" value="7759" />
+          <entry key="txt" value="160" />
           <entry key="xml" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Ini" value="180" />
-          <entry key="JAVA" value="6893" />
-          <entry key="PLAIN_TEXT" value="139" />
+          <entry key="JAVA" value="7759" />
+          <entry key="PLAIN_TEXT" value="168" />
           <entry key="XML" value="18" />
         </counts>
       </usages-collector>
@@ -129,11 +143,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="219">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,8 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/settings.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+            <state relative-caret-position="105">
+              <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -153,8 +167,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/LabReconStreamer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="223" selection-start-line="223" selection-end-line="223" />
+            <state relative-caret-position="3360">
+              <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,14 +179,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/VideoPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
+            <state relative-caret-position="750">
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#772#773#0" expanded="true" />
-                <element signature="e#852#853#0" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,22 +191,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/SettingsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="319">
+              <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2100#2211#0" expanded="true" />
-                <element signature="e#2210#2211#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-end-line="120" />
+            <state relative-caret-position="1695">
+              <caret line="119" column="21" selection-start-line="119" selection-end-line="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,7 +215,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/ConsolePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="105">
               <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -249,13 +257,13 @@
         <option value="$PROJECT_DIR$/src/app/views/CamStreamServer.java" />
         <option value="$PROJECT_DIR$/settings.ini" />
         <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/src/app/views/VideoPanel.java" />
         <option value="$PROJECT_DIR$/src/app/views/ConsolePanel.java" />
-        <option value="$PROJECT_DIR$/src/app/views/LabReconStreamer.java" />
-        <option value="$PROJECT_DIR$/src/app/views/SettingsPanel.java" />
-        <option value="$PROJECT_DIR$/src/app/views/Main.java" />
         <option value="$PROJECT_DIR$/resources/settings.ini" />
         <option value="$PROJECT_DIR$/src/app/views/HelpPanel.java" />
+        <option value="$PROJECT_DIR$/src/app/views/LabReconStreamer.java" />
+        <option value="$PROJECT_DIR$/src/app/views/VideoPanel.java" />
+        <option value="$PROJECT_DIR$/src/app/views/SettingsPanel.java" />
+        <option value="$PROJECT_DIR$/src/app/views/Main.java" />
       </list>
     </option>
   </component>
@@ -264,6 +272,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -288,22 +302,6 @@
             <path>
               <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
               <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -316,20 +314,6 @@
               <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LabReconWebcam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LabReconWebcam" type="b2602c69:ProjectViewProjectNode" />
@@ -351,7 +335,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="labreconwebcam" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553170576613" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553711346125" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -499,6 +483,10 @@
       <workItem from="1552483859410" duration="4174000" />
       <workItem from="1552488193217" duration="4762000" />
       <workItem from="1553093560146" duration="11331000" />
+      <workItem from="1553694979196" duration="4158000" />
+      <workItem from="1554301737082" duration="1239000" />
+      <workItem from="1554380101735" duration="2000" />
+      <workItem from="1556738627548" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="fixed directories">
       <created>1543419957872</created>
@@ -612,17 +600,31 @@
       <option name="project" value="LOCAL" />
       <updated>1553108598736</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="updates">
+      <created>1553695092436</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1553695092436</updated>
+    </task>
+    <task id="LOCAL-00018" summary="camera switching">
+      <created>1553698574904</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553698574904</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113044000" />
+    <option name="totallyTimeSpent" value="119377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21243942" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2253635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -643,14 +645,14 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32846716" />
       <window_info anchor="bottom" id="Application Servers" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.0" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.13731825" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.09127625" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27144772" />
@@ -703,7 +705,9 @@
     <MESSAGE value="dzsfghj" />
     <MESSAGE value="resize in ini" />
     <MESSAGE value="ini file editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="ini file editor" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="camera switching" />
+    <option name="LAST_COMMIT_MESSAGE" value="camera switching" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -794,27 +798,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/ConsolePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/settings.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/LabReconStreamer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        <state relative-caret-position="3360">
+          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -823,34 +810,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/VideoPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/SettingsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2100#2211#0" expanded="true" />
-            <element signature="e#2210#2211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="750">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,8 +820,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/HelpPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-end-line="120" />
+        <state relative-caret-position="1695">
+          <caret line="119" column="21" selection-start-line="119" selection-end-line="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/ConsolePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/SettingsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/settings.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

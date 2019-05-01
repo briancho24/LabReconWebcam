@@ -28,6 +28,7 @@ public class SettingsPanel extends JPanel {
 	private JLabel lblCamera;
 	private JLabel lblPortNum;
 	private JButton btnUpdate;
+	private JButton btnRefreshCams;
 	private JToggleButton btnToggleServer;
 	private JTextField portNum;
 	private JComboBox webcamNames;
@@ -79,6 +80,8 @@ public class SettingsPanel extends JPanel {
 		btnUpdate = new JButton("Set Resolution");
 		btnUpdate.setContentAreaFilled(false);
 
+		btnRefreshCams = new JButton("Refresh Cameras");
+
 		lblPad1 = new JLabel();
 
 		portNum = new JTextField();
@@ -96,6 +99,7 @@ public class SettingsPanel extends JPanel {
 
 		add(lblCamera);
 		add(webcamNames);
+//		add(btnRefreshCams);
 		add(btnToggleServer);
 		add(lblReso);
 		add(resoSlider);
@@ -160,6 +164,15 @@ public class SettingsPanel extends JPanel {
 					e1.printStackTrace();
 				}
 				System.out.println(cam);
+			}
+		});
+		btnRefreshCams.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				webcamNames.removeAllItems();
+				for (String w : Main.webcamList.keySet())
+					webcamNames.addItem(w);
+				webcamNames.setSelectedItem(Main.webcam.getName());
 			}
 		});
 	}

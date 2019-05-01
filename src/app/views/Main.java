@@ -61,7 +61,22 @@ public class Main extends JFrame {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
-		ini = new Ini(new File("resources/settings.ini"));
+		File f = new File("settings.ini");
+
+		if (!f.exists() && !f.isDirectory()) {
+			f.createNewFile();
+			ini = new Ini(f);
+			ini.put("streamer", "camera", "");
+			ini.put("streamer", "port", "80");
+			ini.put("streamer", "res_w", "640");
+			ini.put("streamer", "res_h", "480");
+			ini.put("streamer", "fps", "80");
+			ini.put("image", "img_w", "114");
+			ini.put("image", "img_h", "114");
+		}
+
+		ini = new Ini(f);
+
 		String webcamName = ini.get("streamer", "camera");
 		port = Integer.parseInt(ini.get("streamer", "port"));
 		int res_w = Integer.parseInt(ini.get("streamer", "res_w"));
@@ -94,13 +109,13 @@ public class Main extends JFrame {
 					streamer.start();
 					System.out.println("Stream started");
 				}
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 			} else {
 				if (webcam.isOpen()) {
 					System.out.println("Stream stopped");
 					streamer.stop();
 					videoPanel.getWebcamPanel().stop();
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 				}
 			}
 		} while (true);
